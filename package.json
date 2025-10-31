@@ -9,7 +9,12 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "docker:dev": "docker-compose up archery-frontend-dev",
+    "docker:build": "docker build -t archery-frontend .",
+    "docker:build-dev": "docker build -f Dockerfile.dev -t archery-frontend:dev .",
+    "docker:prod": "docker-compose --profile production up archery-frontend-prod",
+    "docker:stop": "docker-compose down"
   },
   "dependencies": {
     "@fontsource/roboto": "5.2.7",
